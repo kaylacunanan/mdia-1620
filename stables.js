@@ -1,110 +1,93 @@
-// Welcome!
-//
-//                                                  #    #
-//                                             %%% ##   ##
-//                                          %%%%% ###%🎀###
-//                                         %%%%% ### %%% #
-//                                       %%%%%% ### %%% ###
-//                                        %%%% ## %% #######
-//                                       %%%%% # %% #@#####
-//                                     %%%%%% # % #########
-//                                    %%%%% ##### #########
-//                          ###        %% ####### #########
-//                 %%% ############    ########### ########
-//              %%%% ############################### #######
-//            %%%%% ################################## ######
-//          %%%%%% #################################### #C###
-//         %%%🌸%% #####################################  ###
-//         %%%%% #######################################
-//        %%%%%% ############### BEANS ##################
-//     % %%%%%%% ############### BEANS ##################
-//      %%%%%%%%% ############## BEANS ##################
-//     %%%%%%%%%% ########################################
-//  %%% %%%%%%%%   ###### ################################
-//    %%%%%%%%      ###### #################### ##########
-// % %%%🌸%%%%        ####### ########### ###### ##########
-//  %%%%%%%%%         #######  ########### ###### ########
-// %%%%%%%%%%          ##### ###  ######### ####### ######
-//  %%%%%%%%%%          #### ##               ####### ####
-//  %🌸%%%%%%%%%           ## #                  ##### ###
-//   %%  %% % %%         # ##                      ## ###
-//     %   %    %        # ###                      # ###
-//                        # ###                     ## ###
-//                        # ###                     ## ###
-//                        # ####                   #### ##
-//                       ### ###                  ##### ###
-//                      ####  ###                 ####   ##
-//                     #####   ###                 ##    ##
-//                    #####    ####                      ###
-//                     ##        ###                     ###
-//                                ####                     ##
-//                                 ####                    ###
-//                                                         ####
-//                                                          ##
-//
-// This is a template for your assignments and final project. You'll be setting up a stable and making
-// sure it runs smoothly.
-//
-// Please do not create a new file for each assignment!
-// Feel free to keep the headings (e.g.: "Variables"), but please delete any boilerplate
-// comments. E.g.: those seen on lines 58 - 68, for example. They are usually providing directions. 
-// (Your own comments, where necessary, are acceptable.)
-//
-// NOTE: UNLESS SPECIFIED, VARIABLE NAMING IS UP TO YOU. THERE SHOULD BE NO HARD-CODED
-// NUMBERS OR STRINGS WHERE VARIBALES WOULD BE PREFERRED.
 
-//------------------------- Seting up shop (Assignment 1) -------------------------//
+//------------------------- First day (Assignment 2) -------------------------//
 
-// Store information about three horses in your stables.
-// Each horse should have the following information associated with it:
-//
-// - the name of a horse at your stable
-// - the age of the horse
-// - what the horse likes to snack on
-// - the cost to board the horse monthly
-// - the fee for a late payment (monthly rate + 20%)
-//
-// Create a variable and use it to store the name of your stable.
-// Create a variable and use it to store a message for visitors to the stable as a string. It should include the name of your stable.
-// Create a variable and use it to store a message that monthly payment is late, and the amount owing. Include the name of one of your horses in the message.
-
+// OBJECTS //
 
 let juniper = {
-    name: "juniper" ,
+    name: "juniper",
+    nickname: "juni",
     age: 2,
-    favouriteSnack: "tuna" , 
-    boardingCost: 350 ,
-    lateFee: 420,
- };
+    favouriteTreat: "tuna" , 
+    monthlyRent: 350,
+    isHorseInside: true,
+    favouriteDrink: "milk",
+    favouritePerson: "ivan",
+    isHorseHungry: true,
+ }
 
  let doofy = {
     name: "doofy",
+    nickname: "officer",
     age: 5,
-    favouriteSnack: "tofu",
-    boardingCost: 10 ,
-    lateFee: 12, 
+    favouriteTreat: "tofu",
+    monthlyRent: 10, 
+    isHorseInside: false,
+    favouriteDrink: "kombucha",
+    favouritePerson: "anezka",
+    isHorseHungry: false,
  }
 
 let kiwi = {
     name: "kiwi",
+    nickname: "weewee",
     age: 12,
-    favouriteSnack: "walnuts",
-    boardingCost: 800 ,
-    lateFee: 960,
+    favouriteTreat: "peaches",
+    monthlyRent: 800,
+    isHorseInside: true,
+    favouriteDrink: "gingerale",
+    favouritePerson: "kayla",
+    isHorseHungry: false,
 }
 
-
-let message = {
-    stableName: "Pumpkin Stables",
-    welcomeMessage: "Welcome to Pumpkin Stables! Neighhh",
-    latePayment: "Unfortunately your monthly payment is now late. The amount owed is",
+let chupa = {
+    name: "chupa",
+    nickname: "chuchu",
+    age: 1,
+    favouriteTreat: "chips",
+    monthlyRent: 50,
+    isHorseInside: true,
+    favouriteDrink: "tea",
+    favouritePerson: "kayla",
+    isHorseHungry: true,
 }
 
-console.log(`Hello! ${message.welcomeMessage}`);
+// ARRAYS //
 
-console.log(`Hello owner of ${doofy.name}, ${message.latePayment} $${doofy.boardingCost*2 + doofy.lateFee}`)
+let horses = [juniper, doofy, kiwi]
 
-// MAKING CHNAGES TO THIS FILE FOR THIS NEW BRANCH
+// BOOLEANS
 
-// making another change to this file! :33333
-// hiiiiii
+if (chupa.isHorseHungry) {
+    console.log("I'm hungry neigghhhh");
+}
+
+// FUNCTIONS //
+
+// --- stalls function ---
+
+let totalStalls = 10
+
+function stallsAvailable(horsesInStable) {
+    return totalStalls - horsesInStable;
+}
+
+console.log(stallsAvailable(4))
+// 10 - 6 = 4
+
+// --- late fee function ---
+
+function lateFee(horse) {
+    console.log(horse.monthlyRent * 2)
+}
+lateFee(chupa)
+// 50 * 2 = 100
+
+// --- nickname function ---
+
+function horseNickname(horse) {
+    return horse.nickname
+}
+console.log(horseNickname(doofy))
+// officer
+
+
