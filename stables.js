@@ -63,10 +63,6 @@ chupa.isHorseHungry = true;
 
 // --- stalls function ---
 
-function stallsAvailable(number) {
-    let totalStalls
-}
-
 function stallsAvailable() {
     let totalStalls = 10
     let horsesInStable = 4
