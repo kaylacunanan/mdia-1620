@@ -24,7 +24,6 @@ let juniper = {
     isHorseInside: false,
     favouriteDrink: "kombucha",
     favouritePerson: "anezka",
-    isHorseHungry: false,
  }
 
 let kiwi = {
@@ -36,7 +35,6 @@ let kiwi = {
     isHorseInside: true,
     favouriteDrink: "gingerale",
     favouritePerson: "kayla",
-    isHorseHungry: false,
 }
 
 let chupa = {
@@ -48,7 +46,6 @@ let chupa = {
     isHorseInside: true,
     favouriteDrink: "tea",
     favouritePerson: "kayla",
-    isHorseHungry: true,
 }
 
 // ARRAYS //
@@ -56,30 +53,35 @@ let chupa = {
 let horses = [juniper, doofy, kiwi]
 
 // BOOLEANS
+juniper.isHorseHungry = true;
+doofy.isHorseHungry = true;
+kiwi.isHorseHungry = false;
+chupa.isHorseHungry = true;
 
-if (chupa.isHorseHungry) {
-    console.log("I'm hungry neigghhhh");
-}
 
 // FUNCTIONS //
 
 // --- stalls function ---
 
-let totalStalls = 10
-
-function stallsAvailable(horsesInStable) {
-    return totalStalls - horsesInStable;
+function stallsAvailable(number) {
+    let totalStalls
 }
 
-console.log(stallsAvailable(4))
+function stallsAvailable() {
+    let totalStalls = 10
+    let horsesInStable = 4
+    return totalStalls - horsesInStable;
+}
+console.log(stallsAvailable())
 // 10 - 6 = 4
 
 // --- late fee function ---
 
-function lateFee(horse) {
-    console.log(horse.monthlyRent * 2)
+function ifFeePaidLate(horse) {
+    let lateFee = 2
+    console.log(horse.monthlyRent * lateFee)
 }
-lateFee(chupa)
+ifFeePaidLate(chupa)
 // 50 * 2 = 100
 
 // --- nickname function ---
